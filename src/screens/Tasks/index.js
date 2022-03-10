@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, Text} from 'react-native';
 import Header from '../../components/Header';
+import TaskTile from './TaskTile';
 
 const TasksScreen = () => {
   const [tasks, setTasks] = useState([
@@ -10,7 +11,7 @@ const TasksScreen = () => {
     },
   ]);
 
-  const renderItem = ({item}) => <Text>{item.title}</Text>;
+  const renderItem = ({item}) => <TaskTile task={item} />;
 
   return (
     <FlatList
@@ -26,7 +27,6 @@ const TasksScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: '#7ed6df',
   },
 });
 
